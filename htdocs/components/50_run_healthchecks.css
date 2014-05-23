@@ -1,0 +1,15 @@
+.hc-db-list td {
+  padding: 0 20px 0 0;
+}
+
+.run-hc-button {
+  font-size: 10px
+}
+
+.run-hc-button {
+  font-size: 10px
+}
+
+input.run-hc-button-busy {
+  cursor: wait !important;
+}
