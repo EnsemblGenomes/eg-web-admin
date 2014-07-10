@@ -12,7 +12,7 @@ sub render {
   my $html;
   
   # EG
-  my $staging_site = 'http://test.' . $species_defs->GENOMIC_UNIT . '.ensembl.org';
+  my $staging_site = $species_defs->GENOMIC_UNIT eq 'parasite' ? 'http://test.parasite.wormbase.org' : 'http://test.' . $species_defs->GENOMIC_UNIT . '.ensembl.org';
 
   if ($healthchecks) {
     $html = qq(
