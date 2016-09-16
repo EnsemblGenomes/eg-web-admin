@@ -6,7 +6,7 @@ use strict;
 
 sub render {
   my $self         = shift;
-  my $species_defs = $self->species_defs;
+  my $species_defs = $self->hub->species_defs;
   my @species      = $self->_species_by_dataset;
   my $healthchecks = $species_defs->databases->{'DATABASE_HEALTHCHECK'};
   my $html;
@@ -87,7 +87,7 @@ sub render {
 
 sub _species_by_dataset {
   my ($self) = @_;
-  my $species_defs = $self->species_defs;
+  my $species_defs = $self->hub->species_defs;
   my @species;
   foreach my $dataset (@{$species_defs->ENSEMBL_DATASETS}) {
     foreach (sort @{$species_defs->get_config($dataset, 'DB_SPECIES')}) {
