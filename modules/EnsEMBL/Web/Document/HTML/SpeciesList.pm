@@ -8,7 +8,7 @@ sub render {
   my $self         = shift;
   my $species_defs = $self->hub->species_defs;
   my @species      = $self->_species_by_dataset;
-  my $healthchecks = $species_defs->databases->{'DATABASE_HEALTHCHECK'};
+  my $healthchecks = $species_defs->multidb->{'DATABASE_HEALTHCHECK'};
   my $html;
   
   # EG
