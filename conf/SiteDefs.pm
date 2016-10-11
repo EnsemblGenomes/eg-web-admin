@@ -3,7 +3,6 @@ use strict;
 
 
 sub update_conf {   
-  $SiteDefs::ENSEMBL_LOGINS = 1;     
   $SiteDefs::ENSEMBL_BLAST_ENABLED = 0;
   $SiteDefs::ENSEMBL_MART_ENABLED = 0;
   $SiteDefs::ENSEMBL_WEBADMIN_HEALTHCHECK_FIRST_RELEASE = 60;

@@ -15,7 +15,7 @@ use EnsEMBL::ORM::Rose::Object::Session;
 
 use base qw(EnsEMBL::ORM::Rose::Manager);
 
-sub object_class { 'EnsEMBL::ORM::Rose::Object::Session' }
+sub object_class_name { 'EnsEMBL::ORM::Rose::Object::Session' }
 
 sub fetch_single {
   ## fetches first or last session from the db for the given release
