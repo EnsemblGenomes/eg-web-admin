@@ -1,6 +1,6 @@
-package EnsEMBL::ORM::Rose::Object::AnalysisDescription;
+package ORM::EnsEMBL::DB::Production::Object::AnalysisDescription;
 
-### NAME: EnsEMBL::ORM::Rose::Object::AnalysisDescription
+### NAME: ORM::EnsEMBL::DB::Production::Object::AnalysisDescription
 ### ORM class for the biotype table in ensembl_production
 
 ### STATUS: Stable 
@@ -8,14 +8,12 @@ package EnsEMBL::ORM::Rose::Object::AnalysisDescription;
 use strict;
 use warnings;
 
-use base qw(EnsEMBL::ORM::Rose::Object::Trackable);
 
-use constant ROSE_DB_NAME => 'production';
 
 ## Define schema
 __PACKAGE__->meta->setup(
   table         => 'analysis_description',
-
+  
   columns       => [
     analysis_description_id => {type => 'serial', primary_key => 1, not_null => 1}, 
     logic_name              => {type => 'varchar', 'length' => 128 },
@@ -34,13 +32,13 @@ __PACKAGE__->meta->setup(
   relationships => [
     analysis_web_data => {
       'type'        => 'one to many',
-      'class'       => 'EnsEMBL::ORM::Rose::Object::AnalysisWebData',
+      'class'       => 'ORM::EnsEMBL::DB::Production::Object::AnalysisWebData',
       'column_map'  => {'analysis_description_id' => 'analysis_description_id'},
     },
 # EG
     web_data => {
       'type'        => 'many to one',
-      'class'       => 'EnsEMBL::ORM::Rose::Object::WebData',
+      'class'       => 'ORM::EnsEMBL::DB::Production::Object::WebData',
       'column_map'  => {'default_web_data_id' => 'web_data_id'},
     },
 # /EG

@@ -1,6 +1,6 @@
-package EnsEMBL::ORM::Rose::Manager::Session;
+package ORM::EnsEMBL::DB::Healthcheck::Manager::Session;
 
-### NAME: EnsEMBL::ORM::Rose::Manager::Session
+### NAME: ORM::EnsEMBL::DB::Healthcheck::Manager::Session
 ### Module to handle multiple Session entries 
 
 ### STATUS: Stable 
@@ -10,12 +10,6 @@ package EnsEMBL::ORM::Rose::Manager::Session;
 
 use strict;
 use warnings;
-
-use EnsEMBL::ORM::Rose::Object::Session;
-
-use base qw(EnsEMBL::ORM::Rose::Manager);
-
-sub object_class_name { 'EnsEMBL::ORM::Rose::Object::Session' }
 
 sub fetch_single {
   ## fetches first or last session from the db for the given release
